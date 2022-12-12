@@ -1,0 +1,145 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Register-Page</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <!-- <link href="assets/img/favicon.png" rel="icon">
+	<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static '/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static '/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static '/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static '/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static '/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static '/assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static '/assets/css/loginsignup.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <a href="{% url 'index' %}" class="logo"><img src="/static/assets/img/logo.png" alt=""></a>
+            <h1 class="logo"><a href="{% url 'index' %}">Team WD1406<span>.</span></a></h1>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="{% url 'index' %}">Home</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'index' %}">About</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'index' %}">Services</a></li>
+                    <li><a class="nav-link scrollto " href="{% url 'index' %}">Portfolio</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'index' %}">Contact</a></li>
+                    <li class="sign-box"><a href="{% url 'loginpage' %}" id="sign-in-btn">Sign In</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <div class="login-wrap">
+        <div class="login-html">
+
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"><a
+                    href="{% url 'loginpage' %}"></a></label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+
+            <!-- <h1>Sign Up</h1> -->
+            <div class="login-form">
+                <form action="{% url 'registeruser' %}" method="post">
+                    {% csrf_token %}
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label for="user" class="label">Firstname</label>
+                            <input id="user" type="text" class="input" name="firstname">
+                        </div>
+                        <div class="group">
+                            <label for="user" class="label">Lastname</label>
+                            <input id="user" type="text" class="input" name="lastname">
+                        </div>
+                        <div class="group">
+                            <label for="user" class="label">Contact</label>
+                            <input id="user" type="text" class="input" name="contact">
+                        </div>
+                        <div class="group">
+                            <label for="user" class="label">Username</label>
+                            <input id="user" type="text" class="input" name="username">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            <input id="pass" type="password" class="input" data-type="password" name="password">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Confirm Password</label>
+                            <input id="pass" type="password" class="input" data-type="password" name="cpassword">
+                        </div>
+
+                        <div class="group">
+                            <input type="submit" class="button" value="Sign Up">
+                        </div>
+                    </div>
+
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <footer id="footer">
+
+
+
+        <div class="container py-4">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Team WD1406</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="index.html">Team WD1406</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('UKHjzqQl948kqbx6o')
+    </script>
+    <!-- Vendor JS Files -->
+    <script src="{% static '/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static '/assets/vendor/aos/aos.js' %}"></script>
+    <script src="{% static '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static '/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static '/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static '/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static '/assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+    <script src="{% static '/assets/vendor/email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static '/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
